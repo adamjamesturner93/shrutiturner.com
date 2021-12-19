@@ -9,7 +9,7 @@ import {CardWithAvatar} from "../../components/publication/CardWithAvatar";
 import {CardContent} from "../../components/publication/CardContent";
 import {UserInfo} from "../../components/publication/UserInfo";
 import * as React from "react";
-import Head from "next/head";
+import Head from 'next/Head'
 
 type FrontMatter = {
     title: string
@@ -60,7 +60,7 @@ export const Publication: NextPage<Props> = ({frontMatter, mdxSource}) => {
         <React.Fragment>
             <Head>
                 <title>Shruti Turner | {title}</title>
-                <meta name="description" content="Place the meta description text here."/>
+                <meta name="description" content={title}/>
             </Head>
             <Box as="section" pt="20" pb="12" position="relative">
                 <Box position="absolute" inset="0" height="32" bg="blue.600"/>
