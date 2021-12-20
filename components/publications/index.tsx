@@ -52,8 +52,8 @@ export const Publications = () => {
                                     <h2>
                                         <AccordionButton>
                                             <HStack as="a" align="center" fontSize="md" className="group"
-                                                    cursor="pointer">
-                                                <Box fontWeight="semibold">{link.label}</Box>
+                                                    cursor="pointer" width={'100%'} display={'flex'}>
+                                                <Box fontWeight="semibold" flexGrow={1}>{link.label}</Box>
                                                 <AccordionIcon/>
                                             </HStack>
                                         </AccordionButton>

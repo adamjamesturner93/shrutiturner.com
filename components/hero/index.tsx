@@ -27,7 +27,7 @@ export const Hero: React.FC = () => (
                     </Heading>
                     <Heading as="p" fontWeight="medium" color={mode('gray.600', 'gray.400')} mt="5"
                              fontSize="xl">
-                        Working with research teams to put make make people, sustainability and data the
+                        Working with research teams to put people, sustainability and data the
                         core of
                         research and design.
                     </Heading>

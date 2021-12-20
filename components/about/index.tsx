@@ -21,7 +21,7 @@ export const About = () => {
                             fontWeight="extrabold"
                             maxW={{ base: 'unset', lg: '800px' }}
                         >
-                            Your Team, Supercharged with outstanding Support & Playbook
+                            About me
                         </Heading>
                     </Stack>
                     <SimpleGrid

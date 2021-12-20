@@ -9,7 +9,7 @@ export const FeatureLink: React.FC<{slug: string & HTMLChakraProps<'a'>}> = (pro
 
     return (
         <NextLink href={`/publication/${slug}`} passHref>
-            <HStack align="center" fontSize="md" className="group" cursor="pointer" {...rest}>
+            <HStack pt={3} align="center" fontSize="md" className="group" cursor="pointer" {...rest}>
                 <Box fontWeight="default">{children}</Box>
                 <RightArrow
                     color={mode('blue.500', 'blue.400')}

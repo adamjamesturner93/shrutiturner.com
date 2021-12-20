@@ -1,4 +1,4 @@
-import {Avatar, AvatarProps, Box, Flex, FlexProps, Link, useColorModeValue} from '@chakra-ui/react'
+import {AvatarProps, Box, Flex, FlexProps, Link, useColorModeValue} from '@chakra-ui/react'
 import * as React from 'react'
 import {BsCaretLeftFill} from "react-icons/bs";
 import NextLink from 'next/link'
@@ -8,7 +8,7 @@ interface CardWithAvatarProps extends FlexProps {
 }
 
 export const CardWithAvatar = (props: CardWithAvatarProps) => {
-    const { avatarProps, children, ...rest } = props
+    const { children, ...rest } = props
     return (
         <Flex
             position="relative"
@@ -34,6 +34,7 @@ export const CardWithAvatar = (props: CardWithAvatarProps) => {
                     rounded="lg"
                     px="2"
                     py="1"
+                    mt={4}
                     _hover={{bg: useColorModeValue('gray.50', 'gray.700')}}
                     alignSelf={"flex-start"}
                 >
@@ -41,15 +42,7 @@ export const CardWithAvatar = (props: CardWithAvatarProps) => {
                     Back to Publications
                 </Link>
             </NextLink>
-            <Avatar
-                mt="-10"
-                borderWidth="6px"
-                borderColor={'white'}
-                size="2xl"
-                background={'white'}
 
-                {...avatarProps}
-            />
             {children}
         </Flex>
     )

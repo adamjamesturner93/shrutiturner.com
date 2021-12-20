@@ -1,33 +1,35 @@
 import {HStack, Icon, Link, Stack, StackProps, Text, useColorModeValue} from '@chakra-ui/react'
 import * as React from 'react'
-import {HiCalendar, HiLink, HiUserGroup, HiDesktopComputer} from 'react-icons/hi'
+import {HiBookOpen, HiCalendar, HiLink, HiUserGroup} from 'react-icons/hi'
 
 interface UserInfoProps extends StackProps {
     website: string
     published: string
     authors: string
     format: string
+    journal: string
 }
 
 export const UserInfo = (props: UserInfoProps) => {
-    const {website, published, authors, format, ...stackProps} = props
+    const {website, published, authors, format, journal, ...stackProps} = props
     return (
         <Stack
             direction={{base: 'column', sm: 'row'}}
             spacing={{base: '1', sm: '6'}}
-            mt="4"
+            mt="2"
             fontSize="sm"
             fontWeight="medium"
             color={useColorModeValue('blue.600', 'blue.300')}
+            justifyContent={'center'}
             {...stackProps}
         >
             <HStack>
-                <Icon as={HiDesktopComputer}/>
-                <Text>{format}</Text>
+                <Icon as={HiLink}/>
+                <Link as='a' href={website} target={'_blank'}>{format}</Link>
             </HStack>
             <HStack>
-                <Icon as={HiLink}/>
-                <Link as='a' href={website} target={'_blank'}>Full paper</Link>
+                <Icon as={HiBookOpen}/>
+                <Text>{journal}</Text>
             </HStack>
             <HStack>
                 <Icon as={HiCalendar}/>

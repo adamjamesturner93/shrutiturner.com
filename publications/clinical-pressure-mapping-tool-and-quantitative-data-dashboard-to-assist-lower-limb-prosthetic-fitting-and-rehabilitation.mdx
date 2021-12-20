@@ -1,0 +1,19 @@
+---
+title: 'Clinical Pressure Mapping Tool and Quantitative Data Dashboard to Assist Lower-Limb Prosthetic Fitting and Rehabilitation'
+journal: International Society of Prosthetics and Orthotics
+date: 'November 2021'
+doi: ''
+conference: 'ISPO 18th World Congress: Digital Transformation in an Evolving World'
+url: 'https://www.researchgate.net/publication/356051702_Clinical_Pressure_Mapping_Tool_and_Quantitative_Data_Dashboard_to_Assist_Lower-Limb_Prosthetic_Fitting_and_Rehabilitation'
+authors: 'Shruti Turner, Matthew O Hopkins, Alison H Mcgregor'
+format: 'Conference Paper'
+---
+
+<VStack mt={8} spacing={4}>
+    <Heading as={"h3"} size="md" fontWeight="bold">Background</Heading><Text> Prosthetic sockets are a vital component of lower limb prostheses that must be created for each individual. Creating prosthetic sockets is an iterative process, using a combination of clinical theory and experience. There is no standard measurement system to aid the creation of a prosthetic socket and no tool to guide prosthetists in their acquisition of skills, despite the physical health and quality of life impacts of an ill-fitting socket</Text>
+    <Heading as={"h3"} size="md" fontWeight="bold">Aim</Heading><Text>To create a biofeedback tool and data dashboard to display information from embedded sensors in the socket, in a clear and easy to use manner for clinical application.</Text>
+    <Heading as={"h3"} size="md" fontWeight="bold">Method</Heading><Text>Iterations of a 3D model with a colour map, showing the pressure distribution in the socket were created, based on previously recorded measurements from a network of embedded sensors using interpolation. Once the interpolation methods had been optimised, the model was used in a desktop application that registers participant data, receives sensor data via Bluetooth and updates the colour map in real-time. The ability to save the data to a database was included, feeding a web-based data dashboard created for clinicians to access historical data about their patients and monitor changes.</Text>
+    <Heading as={"h3"} size="md" fontWeight="bold">Results</Heading><Text>The 3D model was created in Python using the VTK framework and a Radial Basis Function surface interpolation, with 144 vertex locations representing the sensor measurements. The desktop application enables the registration of participant data, Bluetooth transfer of data and real-time updating of the model was created using the PyQt5 framework and will be open source when distributed. The server side of the web application was created in Flask, with a SQL database. The software has been created modularly to enable any hardware to be connected with minor code modifications. The software must be downloaded onto the device to use the biofeedback tool; however, the dashboard can be accessed via any browser connected to the internet.</Text>
+    <Heading as={"h3"} size="md" fontWeight="bold">Discussion and Conclusion</Heading><Text>The software enables prosthetists to view the pressure distribution within the prosthetic socket during fitting and observe the impacts of socket modifications without having to rely solely on subjective feedback from patients. Physiotherapists may use the tool to provide additional feedback during gait re-education. By using the data dashboard, clinicians can monitor changes to socket fit over time and help determine whether a new socket is required.</Text>
+    <Heading as={"h3"} size="md" fontWeight="bold">Acknowledgements</Heading><Text>The authors thank The Royal British Legion for their funding.</Text>
+</VStack>

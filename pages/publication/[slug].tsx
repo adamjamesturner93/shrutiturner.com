@@ -10,16 +10,8 @@ import {CardContent} from "../../components/publication/CardContent";
 import {UserInfo} from "../../components/publication/UserInfo";
 import * as React from "react";
 import Head from 'next/Head'
+import {FrontMatter} from "../../domain";
 
-type FrontMatter = {
-    title: string
-    date: string
-    doi: string
-    thumbnail: string
-    url: string
-    authors: string
-    format: string
-}
 
 type Props = {
     frontMatter: any | FrontMatter,
@@ -55,7 +47,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 }
 
 export const Publication: NextPage<Props> = ({frontMatter, mdxSource}) => {
-    const {title, doi, date, thumbnail, url, authors, format} = frontMatter as FrontMatter;
+    const {title, doi, date, thumbnail, url, authors, format, journal, conference} = frontMatter as FrontMatter;
+    const colourMode = useColorModeValue('gray.600', 'gray.400');
     return (
         <React.Fragment>
             <Head>
@@ -65,20 +58,24 @@ export const Publication: NextPage<Props> = ({frontMatter, mdxSource}) => {
             <Box as="section" pt="20" pb="12" position="relative">
                 <Box position="absolute" inset="0" height="32" bg="blue.600"/>
                 <CardWithAvatar
-                    maxW="4xl"
+                    maxW="5xl"
                     avatarProps={{
                         src: thumbnail,
-                        name: 'ISPO',
+                        name: journal,
                     }}
                 >
                     <CardContent>
                         <Heading size="lg" fontWeight="extrabold" letterSpacing="tight">
                             {title}
                         </Heading>
-                        <Text color={useColorModeValue('gray.600', 'gray.400')}>
-                            <strong>DOI:</strong>{doi}
-                        </Text>
-                        <UserInfo format={format} website={url} published={date} authors={authors}/>
+                        {doi ? <Text mt={2} color={colourMode}>
+                                <strong>DOI:</strong>{doi}
+                            </Text> :
+                            <Text mt={2} color={colourMode}>
+                                <strong>Conference: </strong>{conference}
+                            </Text>
+                        }
+                        <UserInfo journal={journal} format={format} website={url} published={date} authors={authors}/>
                         <MDXRemote {...mdxSource} components={{Heading, Text, VStack}}/>
                     </CardContent>
                 </CardWithAvatar>
