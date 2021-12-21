@@ -9,7 +9,7 @@ import {CardWithAvatar} from "../../components/publication/CardWithAvatar";
 import {CardContent} from "../../components/publication/CardContent";
 import {UserInfo} from "../../components/publication/UserInfo";
 import * as React from "react";
-import Head from 'next/Head'
+import Head from 'next/head';
 import {FrontMatter} from "../../domain";
 
 
