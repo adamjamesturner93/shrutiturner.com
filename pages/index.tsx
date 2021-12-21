@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {NextPage} from "next";
 import {About, Hero, Publications} from "../components/";
-import Head from 'next/Head'
+import Head from 'next/Head';
 
 const App: NextPage = () => {
     return (
